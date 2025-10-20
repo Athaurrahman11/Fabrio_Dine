@@ -35,8 +35,13 @@
         --h1-size: 5rem;
         --h2-size: 2rem;
         --h3-size: 1.8rem;
+        --h4-size: 1.4rem;
         --main-bg: #000000;
         --p-size: 1rem;
+
+        --menu-title:3rem;
+        --menu-sub:1.3rem;
+
       }
       header {
         position: fixed;
@@ -126,6 +131,19 @@
         font-size: var(--h1-size);
         font-weight: 500;
       }
+
+
+
+      @media(max-width:600px){
+        :root{
+          --h1-size: 3rem;
+        }
+        .text h1 {
+          font-size: var(--h1-size);
+          font-weight: 400;
+        }
+      }
+
       .fabrio {
         color: #00bf63;
         font-weight: 700;
@@ -155,12 +173,23 @@
       }
       .menu-text h1 {
         color: var(--text-clr);
-        font-size: var(--h2-size);
+        font-size: var(--menu-title);
         text-align: center;
       }
+
+      .menu-text h1::after{
+        content: "";
+        height: 5px;
+        width: 25%;
+        margin: 3px auto 0 auto;
+        background: #00bf63;
+        display: block;   
+      }
+
       .menu-text p {
+        margin-top: 10px;
         color: var(--text-clr);
-        font-size: var(--p-size);
+        font-size: var(--menu-sub);
         text-align: center;
       }
 
@@ -169,50 +198,106 @@
           display: none;
         }
       }
+      
+      .shop-text h1 {
+        color: var(--text-clr);
+        font-size: var(--menu-title);
+        text-align: center;
+      }
+      .shop-text h1::after{
+        content: "";
+        height: 5px;
+        width: 5%;
+        margin: 3px auto 0 auto;
+        background: #00bf63;
+        display: block;   
+      }
+      .shop-text p {
+        margin-top: 10px;
+        color: var(--text-clr);
+        font-size: var(--menu-sub);
+        text-align: center;
+      
+      }
 
-     
+      .item img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .item{
+        border: 2px solid #3d2314;
+        padding: 10px;
+        color: var(--main-clr);
+      }
+
+      .item h3{
+        text-align: center;
+        font-size: var(--h4-size);
+      }
+      .item p{
+        text-align: justify;
+        color: #d2b475;
+        font-size: var(--p-size);
+      }
+      .menu-items{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+        gap: 20px;
+      }
       .card{
-        background-color: #3e2626;
         width: 280px;
         border-radius: 16px;
         overflow: hidden;
-        position: relative;
+        background:#123223;
       }
       
-      .card-img img{
-        max-width: 250px;
-            width: 100%;
-            height: 100%;
+      .card-image{
+          overflow: hidden;  
+
+      }
+      .card-image img{
+          width: 100%;
+          height: 350px;
+          object-fit: cover;  
+          transition: all 0.5s ease;
       }
 
+      .card-image img:hover{
+        transform: scale(1.1);
+      }
+    
       .card-text{
         color: #00bf63;
         text-align: center;
-        background: var(--main-btn);
-        position: absolute;
-        bottom: 45px;
-        left: 0;
         width: 100%;
+        
         
      
       }
-       .card-button {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-
-      }
+  
       .card-text h3{
-        font-size: var(--h3-size);
+        font-size: var(--h4-size);
       }
-      .card-button button{
-        width: 100%;
-        padding: 10px;
-        font-size: var(--p-size);
-        font-weight: 500;
-      }
+      
+     .card-text h5{
+      font-size: var(--p-size);
+      color: var(--btn-text);
+     }
+
+     .card-button button{
+      width: 100%;
+      padding: 10px;
+      font-size: var(--p-size);
+      font-weight: 600;
+      color: var(--main-btn);
+      transition: all 0.5s ease;
+     }
+
       .card-button button:hover{
+       color: var(--text-clr);
+      background: var(--main-clr);
         cursor: pointer;
       }
       .shop-items{
@@ -228,32 +313,300 @@
         }
       }
 
-
-      .shop-text h1 {
-        color: var(--text-clr);
-        font-size: var(--h2-size);
+      .about-item{
+        color: var(--btn-text);
+        width: 250px;
         text-align: center;
-      }
-      .shop-text p {
-        color: var(--text-clr);
         font-size: var(--p-size);
-        text-align: center;
+      }
+      .about-item p{
+        font-size: var(--p-size);
+      }
+      .about-item img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--main-btn);
+        padding: 5px;
+        transition: all 0.5s ease;
+      }
+      .about-item img:hover{
+        
+        padding: 0;
+        transform: scale(1.0.5);
+      }
+      .about-items{
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+        gap: 10px;
+        margin-bottom: 75px;
       }
 
-      .item img{
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
+      @media(max-width:450px){
+        .about-items{
+           margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        margin-left:auto ;
+        margin-right:auto ;
+
+
+        }
       }
-      .item{
-        border: 2px solid #3d2314;
-        padding: 10px;
+
+      .aboutus-text{
+        color: var(--text-clr);
+        text-align: center;
       }
-      .menu-items{
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-        gap: 20px;
+      .aboutus-text h1{
+        font-size: var(--menu-title);
+        
+
       }
+
+      .aboutus-text h1::after{
+        content: "";
+        height: 5px;
+        width: 10%;
+        margin: 3px auto 0 auto;
+        background: #00bf63;
+        display: block;        
+      }
+
+      .aboutus-text p{
+        margin-top: 20px;
+        font-size: var(--menu-sub);
+        text-align: justify;
+      }
+      .chefs-section {
+        text-align: center;
+        padding: 40px 20px;
+
+        
+    }
+
+      .chefs-section h2 {
+        color: var(--text-clr);
+        font-size: var(--menu-title);
+        margin-bottom: 10px;
+        margin-top: 35px;
+      }
+
+    .chefs-section h2::after{
+          content: "";
+          height: 5px;
+          width: 14%;
+          margin: 3px auto 0 auto;
+          background: #00bf63;
+          display: block; 
+    }
+
+    .chefs-section p {
+      color: var(--text-clr);
+      margin-bottom: 30px;
+      font-size: var(--menu-sub);
+    }
+
+    .chef-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    
+    .chef-grid:has(:hover) .chef-card:not(:hover){
+      filter: grayscale(1) brightness(0.6);
+
+    }
+
+
+  
+
+    .chef-card {
+      background: #553d2f;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 230px;
+    }
+
+    .chef-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .chef-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .chef-card h3 {
+      color: var(--main-clr);
+      margin-top: 10px;
+      font-size: var(--h4-size);
+    }
+
+    .chef-card p {
+      color: var(--btn-text);
+      font-size: var(--p-size);
+      margin-top: 5px;
+    }
+    .contact-page h1{
+      color: var(--text-clr);
+      text-align: center;
+      font-size: var(--menu-title);
+    }
+
+    .contact-page h1::after{
+            content: "";
+            height: 5px;
+            width: 13%;
+            margin: 3px auto 0 auto;
+            background: #00bf63;
+            display: block; 
+    }
+    .contact-page h2{
+      color: var(--text-clr);
+      font-size: var(--menu-sub);
+      text-align: center;
+    }
+
+    .contact{
+      margin-top: 10px;
+      background: #1b1917;
+    }
+
+    .contact-page h2{
+      margin-top: 5px;
+      color: var(--text-clr);
+      font-size: var(--menu-sub);
+    }
+    .info{
+      padding: 70px;
+    }
+    .in{
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .detail i{
+      color: var(--btn-text);
+    }
+
+    .detail p{
+      color: var(--text-clr);
+    }
+    .detail a{
+      color: var(--text-clr);
+    }
+    
+    .information{
+      display: flex;
+      justify-content: space-around;
+      color: #f6f6ef;
+      font-size: var(--h4-size);
+      
+    }
+
+    .form-content h2{
+      font-size: var(--h2-size);
+    }
+
+    form{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    input{
+      font-size: var(--p-size);
+      width: 400px;
+      padding: 10px;
+      color: var(--main-bg);
+      background: var(--btn-text);
+      border: none;
+
+    }
+    input:active{
+      border: 1px solid green;
+    }
+
+  textarea{
+      font-size: var(--p-size);
+      width: 400px;
+      padding: 10px;
+      color: var(--main-bg);
+      background: var(--btn-text);
+      border: none;
+
+    }
+
+    input[type="submit"]{
+      font-size: var(--p-size);
+      width: 400px;
+      padding: 10px;
+      color: var(--main-bg);
+      background: var(--btn-text);
+      border: none;
+      font-weight: 600;
+      transition: all 0.5s ease;
+    }
+
+    input[type="submit"]:hover{
+      color: var(--text-clr);
+      background: var(--main-clr);
+      cursor: pointer;
+    }
+
+    .form-content{
+      padding: 10px;
+    }
+
+    footer {
+      background: var(--main-btn);
+      color: white;
+      padding: 20px 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .social-media-links{
+      color: var(--main-clr);
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      color: var(--main-clr);
+    }
+    footer a {
+      color: var(--text-clr);
+      font-size: var(--p-size);
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: var(--main-clr);
+    }
+    footer p {
+      font-size: var(--p-size);
+      margin-top: 10px;
+    }
+
+
+
+    
+
+
     </style>
   </head>
   <body>
@@ -262,9 +615,9 @@
       <ul class="nav-list">
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
-        <li><a href="#Shop">Shop</a></li>
-        <li><a href="#pages">Pages</a></li>
-        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#aboutus">About</a></li>
+        <li><a href="#team">Our Team</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-content">
@@ -273,7 +626,7 @@
         <i class="ri-menu-line" id="navbtn"></i>
       </div>
     </header>
-
+    
     <section class="home" id="home">
       <div class="home-content">
         <div class="text">
@@ -282,7 +635,7 @@
             Discover a world of mouthwatering dishes made with love and passion.
             Every bite tells a story of flavors, crafted just for you
           </h2>
-          <a href="">ORDER NOW</a>
+          <a href="#shop">ORDER NOW</a>
         </div>
       </div>
     </section>
@@ -301,19 +654,29 @@
 
         <div class="menu-items">
           
-          <div class="item" style="color: #00bf63;">
-            <img src="./assets/Dessert.png" alt="">
-            <h3>Desset</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias recusandae cupiditate numquam ducimus, soluta quo tempora assumenda officia incidunt quas quae excepturi eum eos sapiente vero quis. Earum, doloremque.</p>
+          <div class="item" >
+            <img src="./assets/Burger_Menu.jpg" alt="Burger_image">
+            <h3>Burgers</h3>
+            <p>Savor our juicy grilled beef or chicken patty, layered with fresh crisp lettuce, ripe tomato, and a signature sauce, all tucked inside a soft, freshly baked bun. Perfect for a hearty, satisfying meal.</p>
           </div>
 
-          <div class="item" style="color: #00bf63;">
-            <img src="./abt.png" alt="">
-            <h3>Desset</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias recusandae cupiditate numquam ducimus, soluta quo tempora assumenda officia incidunt quas quae excepturi eum eos sapiente vero quis. Earum, doloremque.</p>
+          <div class="item" >
+            <img src="./assets/Pasta_Menu.jpg" alt="Pasta_image">
+            <h3>Pasta</h3>
+            <p>Enjoy creamy or tangy pasta dishes made with fresh ingredients and aromatic herbs. Choose your favorite sauce for a comforting, flavorful experience that warms the soul.</p>
           </div>
 
+           <div class="item" >
+            <img src="./assets/Dessert_Menu.png" alt="Dessert_image">
+            <h3>Desserts</h3>
+            <p>Indulge in our sweet treats — from rich, moist cakes to fudgy brownies and more. Each dessert is freshly made to satisfy your cravings and leave you smiling.</p>
+          </div>
 
+          <div class="item" >
+            <img src="./assets/Juice_Menu.png" alt="Drinks_image">
+            <h3>Drinks</h3>
+            <p>Cool down with a refreshing citrus mocktail, filled with juicy orange slices, mixed berries, and a hint of fresh mint. Light, fruity, and perfectly refreshing for any time of day.</p>
+          </div>
 
         </div>
 
@@ -326,12 +689,8 @@
     <section class="shop" id="shop">
       <div class="manu-content">
         <div class="shop-text">
-          <h1>Explore Our Menu</h1>
-          <p>
-            Discover a delicious selection of dishes made with love and the
-            freshest ingredients. From spicy starters to satisfying mains and
-            sweet endings — there’s something for every craving.
-          </p>
+          <h1>Shop</h1>
+          <p>Browse & Order Your Favorite Burgers, Pasta, Desserts, and Drinks</p>
         </div>
 
         <div class="shop-items">
@@ -339,116 +698,118 @@
           
           <div class="card">
             <div class="card-image">
-              <img src="./assets/Dessert.png" alt="" />
+              <img src="./assets/Classic Beef Burger.png" alt="Classic Beef Burger" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
-            <h5 >500 Rs.</h5>
+              <h3 >Classic Beef Burger</h3>
+            <h5 >800 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
 
-          <div class="card">
+            <div class="card">
             <div class="card-image">
-              <img src="./assets/gallery-6.jpg" alt="" />
+              <img src="./assets/chicken grill burger.png" alt="" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
+              <h3 >Chicken Grill Burger</h3>
             <h5 >500 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
-          
-          
-          <div class="card">
+
+            <div class="card">
             <div class="card-image">
-              <img src="./assets/gallery-5.jpg" alt="" />
+              <img src="./assets/Creamy Alfredo Pasta.png" alt="" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
+              <h3 >Creamy Pasta</h3>
             <h5 >500 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
-          
-           <div class="card">
+
+            <div class="card">
             <div class="card-image">
-              <img src="./assets/special-combo.png" alt="" />
+              <img src="./assets/Seafood Pasta.png" alt="Seafood Pasta" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
+              <h3 >Seafood Pasta</h3>
             <h5 >500 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
 
-           <div class="card">
+            <div class="card">
             <div class="card-image">
-              <img src="./assets/special-combo.png" alt="" />
+              <img src="./assets/Fruit Tart.png" alt="Fruit Tart" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
+              <h3 >Fruit Tart</h3>
             <h5 >500 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
 
-           <div class="card">
+            <div class="card">
             <div class="card-image">
-              <img src="./assets/special-combo.png" alt="" />
+              <img src="./assets/moist cakes.png" alt="moist cakes" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
+              <h3 >Moist Cakes</h3>
             <h5 >500 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
 
-           <div class="card">
+            <div class="card">
             <div class="card-image">
-              <img src="./assets/special-combo.png" alt="" />
+              <img src="./assets/Citrus Mocktail .png" alt="" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
+              <h3 >Citrus Mocktail</h3>
             <h5 >500 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
 
-           <div class="card">
+            <div class="card">
             <div class="card-image">
-              <img src="./assets/special-combo.png" alt="" />
+              <img src="./assets/Iced Coffee.png" alt="Iced Coffee" />
             </div>
             <div class="card-text">
-              <h3 >Burger Buffe</h3>
+              <h3 >Iced Coffee</h3>
             <h5 >500 Rs.</h5>
             </div>
 
             <div class="card-button">
-              <button style="color: #00bf63;">Add To Cart</button>
+              <button >Add To Cart</button>
             </div>
           </div>
+
+         
+         
           
 
           
@@ -463,12 +824,152 @@
     </section>
 
     <section class="aboutus" id="aboutus">
-      <div class="about-content">
-        <div class="about-title">
-          <h1>About us</h1>
-          <p>Learn about our history</p>
+            <div class="aboutus-content">
+              <div class="aboutus-text" >
+                <h1>About Us</h1>
+                <p>Welcome to Fabrio Dine, where great taste meets freshness and quality! We started with a simple idea — to serve delicious, freshly made food that brings people together.
+At Fabrio Dine, every meal is crafted with care using fresh ingredients, authentic recipes, and a passion for flavor. From our juicy burgers and creamy pasta to our sweet desserts and refreshing drinks, we make sure every bite is something special.
+Our team believes in creating not just food, but an experience — one that’s friendly, flavorful, and full of joy. Whether you’re dining in, ordering online, or grabbing a quick bite, Fabrio Dine is here to make your day a little more delicious.</p>
+              </div>
+
+              <div class="about-items">
+                
+                <div class="about-item">
+                  <img src="./assets/Fresh Food.png" alt="">
+                  <p>Fresh food</p>
+                </div>
+
+                <div class="about-item">
+                  <img src="./assets/quick delivery.png" alt="quick delivery">
+                  <p>Friendly service and quick delivery</p>
+                </div>
+
+                <div class="about-item">
+                  <img src="./assets/Quality.png" alt="Quality">
+                  <p>Quality you can taste</p>
+                </div>
+
+                <div class="about-item">
+                  <img src="./assets/Modern Menu.png" alt="Modern Menu">
+                  <p>A menu made for everyone</p>
+                </div>
+
+              </div>
+            </div>
+
+            
+            <section class="chefs-section" id="team">
+  <h2>Our Chefs</h2>
+  <p>Meet the talented team behind every delicious dish at Fabrio Dine.</p>
+
+  <div class="chef-grid">
+    <div class="chef-card">
+      <img src="./assets/Chef1.png" alt="Chef 1">
+      <h3>Chef Aran</h3>
+      <p>Master of flavor and presentation.</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="./assets/Chef3.png" alt="Chef 2">
+      <h3>Chef Liana</h3>
+      <p>Expert in desserts and creative plating.</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="./assets/Chef2.png" alt="Chef 3">
+      <h3>Chef Daniel</h3>
+      <p>Specialist in grilled dishes and sauces.</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="./assets/Chef5.png" alt="Chef 4">
+      <h3>Chef Mira</h3>
+      <p>Bringing global flavors to your plate.</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="./assets/Chef4.png" alt="Chef 5">
+      <h3>Chef Rohan</h3>
+      <p>Turning ingredients into art with every recipe.</p>
+    </div>
+  </div>
+</section>
+
+    </section>
+
+
+    <section class="contact-page" id="contact">
+      <h1>Contact Us</h1>
+      <h2>We’d love to hear from you! Whether you want to reserve a table, ask about our menu, or share your feedback — we’re always happy to connect.</h2>
+   
+      <div class="contact">
+       <div class="information">
+         <div class="info">
+            <div class="contact-details">
+              
+              <div class="in">
+                <div class="detail">
+                  <p><i class="ri-phone-fill"></i>+94 71 123 4567</p>
+                </div>
+
+                <div class="detail">
+                  <p><i class="ri-mail-fill"></i><a href="info@fabriodine.com">info@fabriodine.com</a></p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="location">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16027.780188227101!2d81.81377836787972!3d7.3244094283511325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afc964d8addeb71%3A0x736771308cb6e49c!2sKekirawa!5e0!3m2!1sen!2slk!4v1760960784061!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
         </div>
+
+
+          <div class="form-content">
+            <h2>Your Details</h2>
+            <form action="">
+              <label for="name">Name: </label>
+              <input type="text" placeholder="Name" name="name"><br>
+
+              <label for="Email">Email: </label>
+              <input type="email" placeholder="Email"><br>
+
+              <label for="Phone">Phone: </label>
+              <input type="text" placeholder="Phone" name="Phone"><br>
+
+              <label for="Comments">Comments: </label>
+              <textarea name="Comments" id="Comments"></textarea><br>
+
+              <input type="submit" value="SUBMIT">
+            
+            
+            </form>
+          </div>
+       
+        </div>
+     
+     
       </div>
     </section>
+<footer>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#shop">Shop</a>
+        <a href="#aboutus">About</a>
+        <a href="#team">Our Team</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-media-links">
+        <a href="#"><i class="ri-facebook-fill"></i></a>
+        <a href="#"><i class="ri-instagram-fill"></i></a>
+        <a href="#"><i class="ri-twitter-x-line"></i></a>
+      </div>
+      <p>© 2025 <span class="fabrio">FABRIO DINE.</span> All Rights Reserved.</p>
+    </footer>
+  
+
+   
   </body>
 </html>
