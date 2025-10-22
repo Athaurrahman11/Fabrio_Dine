@@ -14,605 +14,14 @@
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      body {
-        background: var(--main-bg);
-      }
-      * {
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        list-style: none;
-        box-sizing: border-box;
-        font-family: "Jost", sans-serif;
-      }
-      :root {
-        --main-clr: #00bf63;
-        --text-clr: #f6f6ef;
-        --main-btn: #3d2314;
-        --btn-text: #d2b475;
-        --h1-size: 5rem;
-        --h2-size: 2rem;
-        --h3-size: 1.8rem;
-        --h4-size: 1.4rem;
-        --main-bg: #000000;
-        --p-size: 1rem;
-
-        --menu-title:3rem;
-        --menu-sub:1.3rem;
-
-      }
-      header {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        right: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 10%;
-        background: var(--bg-color);
-        box-shadow: 0 0 6px black;
-        z-index: 1000;
-        color: var(--text-clr);
-        background-color: rgb(56, 29, 29);
-      }
-      .logo span {
-        color: var(--main-clr);
-        font-size: 26px;
-        font-weight: 600;
-      }
-      .nav-list {
-        display: flex;
-      }
-      .nav-list a {
-        display: inline-block;
-        margin: 0px 20px;
-        color: var(--text-clr);
-
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s ease;
-        padding: 2px 0px;
-        font-size: var(--p-size);
-      }
-      .nav-list a:hover {
-        color: var(--main-clr);
-        border-bottom: 2px solid var(--main-clr);
-      }
-      .nav-content {
-        display: flex;
-        align-items: center;
-      }
-      .nav-content a {
-        margin: 0px 10px;
-        font-size: 22px;
-        color: var(--text-clr);
-
-        transition: all 0.5s ease;
-      }
-
-      .nav-content a:hover {
-        transform: matrix(1.1);
-        color: var(--main-clr);
-      }
-      .ri-menu-line {
-        font-size: 32px;
-        z-index: 1001;
-        cursor: pointer;
-        margin-left: 10px;
-      }
-      section {
-        padding-top: 80px;
-        padding-right: 10%;
-        padding-bottom: 80px;
-        padding-left: 10%;
-      }
-      .home {
-        position: relative;
-        width: 100%;
-        text-align: center;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url("./assets/Home.png");
-        background-attachment: fixed;
-        align-items: center;
-
-        background-position: center;
-        background-size: cover;
-      }
-
-      .text h1 {
-        font-size: var(--h1-size);
-        font-weight: 500;
-      }
-
-
-
-      @media(max-width:600px){
-        :root{
-          --h1-size: 3rem;
-        }
-        .text h1 {
-          font-size: var(--h1-size);
-          font-weight: 400;
-        }
-      }
-
-      .fabrio {
-        color: #00bf63;
-        font-weight: 700;
-      }
-      .text h2 {
-        font-size: var(--h2-size);
-        margin-bottom: 20px;
-        font-weight: 400;
-      }
-      .home-content {
-        position: relative;
-        color: var(--text-clr);
-        display: flex;
-        flex-direction: column;
-      }
-      .text a {
-        font-weight: 600;
-        background: var(--main-btn);
-        color: var(--btn-text);
-        letter-spacing: 3px;
-        padding: 10px 30px;
-        border-radius: 20px 20px;
-        transition: all 0.2s ease;
-      }
-      .text a:hover {
-        color: var(--main-clr);
-      }
-      .menu-text h1 {
-        color: var(--text-clr);
-        font-size: var(--menu-title);
-        text-align: center;
-      }
-
-      .menu-text h1::after{
-        content: "";
-        height: 5px;
-        width: 25%;
-        margin: 3px auto 0 auto;
-        background: #00bf63;
-        display: block;   
-      }
-
-      .menu-text p {
-        margin-top: 10px;
-        color: var(--text-clr);
-        font-size: var(--menu-sub);
-        text-align: center;
-      }
-
-      @media (max-width: 375px) {
-        .nav-list {
-          display: none;
-        }
-      }
-      
-      .shop-text h1 {
-        color: var(--text-clr);
-        font-size: var(--menu-title);
-        text-align: center;
-      }
-      .shop-text h1::after{
-        content: "";
-        height: 5px;
-        width: 5%;
-        margin: 3px auto 0 auto;
-        background: #00bf63;
-        display: block;   
-      }
-      .shop-text p {
-        margin-top: 10px;
-        color: var(--text-clr);
-        font-size: var(--menu-sub);
-        text-align: center;
-      
-      }
-
-      .item img{
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      .item{
-        border: 2px solid #3d2314;
-        padding: 10px;
-        color: var(--main-clr);
-      }
-
-      .item h3{
-        text-align: center;
-        font-size: var(--h4-size);
-      }
-      .item p{
-        text-align: justify;
-        color: #d2b475;
-        font-size: var(--p-size);
-      }
-      .menu-items{
-        margin-top: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
-        gap: 20px;
-      }
-      .card{
-        width: 280px;
-        border-radius: 16px;
-        overflow: hidden;
-        background:#123223;
-      }
-      
-      .card-image{
-          overflow: hidden;  
-
-      }
-      .card-image img{
-          width: 100%;
-          height: 350px;
-          object-fit: cover;  
-          transition: all 0.5s ease;
-      }
-
-      .card-image img:hover{
-        transform: scale(1.1);
-      }
+    <link rel="stylesheet" href="./style.css">
     
-      .card-text{
-        color: #00bf63;
-        text-align: center;
-        width: 100%;
-        
-        
-     
-      }
-  
-      .card-text h3{
-        font-size: var(--h4-size);
-      }
-      
-     .card-text h5{
-      font-size: var(--p-size);
-      color: var(--btn-text);
-     }
-
-     .card-button button{
-      width: 100%;
-      padding: 10px;
-      font-size: var(--p-size);
-      font-weight: 600;
-      color: var(--main-btn);
-      transition: all 0.5s ease;
-     }
-
-      .card-button button:hover{
-       color: var(--text-clr);
-      background: var(--main-clr);
-        cursor: pointer;
-      }
-      .shop-items{
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 20px;
-      }
-       @media (max-width:685px) {
-        
-        .card{
-          width: 100%;
-        }
-      }
-
-      .about-item{
-        color: var(--btn-text);
-        width: 250px;
-        text-align: center;
-        font-size: var(--p-size);
-      }
-      .about-item p{
-        font-size: var(--p-size);
-      }
-      .about-item img{
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid var(--main-btn);
-        padding: 5px;
-        transition: all 0.5s ease;
-      }
-      .about-item img:hover{
-        
-        padding: 0;
-        transform: scale(1.0.5);
-      }
-      .about-items{
-        margin-top: 70px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-        gap: 10px;
-        margin-bottom: 75px;
-      }
-
-      @media(max-width:450px){
-        .about-items{
-           margin-top: 70px;
-        display: flex;
-        flex-direction: column;
-        margin-left:auto ;
-        margin-right:auto ;
-
-
-        }
-      }
-
-      .aboutus-text{
-        color: var(--text-clr);
-        text-align: center;
-      }
-      .aboutus-text h1{
-        font-size: var(--menu-title);
-        
-
-      }
-
-      .aboutus-text h1::after{
-        content: "";
-        height: 5px;
-        width: 10%;
-        margin: 3px auto 0 auto;
-        background: #00bf63;
-        display: block;        
-      }
-
-      .aboutus-text p{
-        margin-top: 20px;
-        font-size: var(--menu-sub);
-        text-align: justify;
-      }
-      .chefs-section {
-        text-align: center;
-        padding: 40px 20px;
-
-        
-    }
-
-      .chefs-section h2 {
-        color: var(--text-clr);
-        font-size: var(--menu-title);
-        margin-bottom: 10px;
-        margin-top: 35px;
-      }
-
-    .chefs-section h2::after{
-          content: "";
-          height: 5px;
-          width: 14%;
-          margin: 3px auto 0 auto;
-          background: #00bf63;
-          display: block; 
-    }
-
-    .chefs-section p {
-      color: var(--text-clr);
-      margin-bottom: 30px;
-      font-size: var(--menu-sub);
-    }
-
-    .chef-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-    
-    .chef-grid:has(:hover) .chef-card:not(:hover){
-      filter: grayscale(1) brightness(0.6);
-
-    }
-
-
-  
-
-    .chef-card {
-      background: #553d2f;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      max-width: 230px;
-    }
-
-    .chef-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .chef-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .chef-card h3 {
-      color: var(--main-clr);
-      margin-top: 10px;
-      font-size: var(--h4-size);
-    }
-
-    .chef-card p {
-      color: var(--btn-text);
-      font-size: var(--p-size);
-      margin-top: 5px;
-    }
-    .contact-page h1{
-      color: var(--text-clr);
-      text-align: center;
-      font-size: var(--menu-title);
-    }
-
-    .contact-page h1::after{
-            content: "";
-            height: 5px;
-            width: 13%;
-            margin: 3px auto 0 auto;
-            background: #00bf63;
-            display: block; 
-    }
-    .contact-page h2{
-      color: var(--text-clr);
-      font-size: var(--menu-sub);
-      text-align: center;
-    }
-
-    .contact{
-      margin-top: 10px;
-      background: #1b1917;
-    }
-
-    .contact-page h2{
-      margin-top: 5px;
-      color: var(--text-clr);
-      font-size: var(--menu-sub);
-    }
-    .info{
-      padding: 70px;
-    }
-    .in{
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-    }
-
-    .detail i{
-      color: var(--btn-text);
-    }
-
-    .detail p{
-      color: var(--text-clr);
-    }
-    .detail a{
-      color: var(--text-clr);
-    }
-    
-    .information{
-      display: flex;
-      justify-content: space-around;
-      color: #f6f6ef;
-      font-size: var(--h4-size);
-      
-    }
-
-    .form-content h2{
-      font-size: var(--h2-size);
-    }
-
-    form{
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      box-sizing: border-box;
-    }
-
-    input{
-      font-size: var(--p-size);
-      width: 400px;
-      padding: 10px;
-      color: var(--main-bg);
-      background: var(--btn-text);
-      border: none;
-
-    }
-    input:active{
-      border: 1px solid green;
-    }
-
-  textarea{
-      font-size: var(--p-size);
-      width: 400px;
-      padding: 10px;
-      color: var(--main-bg);
-      background: var(--btn-text);
-      border: none;
-
-    }
-
-    input[type="submit"]{
-      font-size: var(--p-size);
-      width: 400px;
-      padding: 10px;
-      color: var(--main-bg);
-      background: var(--btn-text);
-      border: none;
-      font-weight: 600;
-      transition: all 0.5s ease;
-    }
-
-    input[type="submit"]:hover{
-      color: var(--text-clr);
-      background: var(--main-clr);
-      cursor: pointer;
-    }
-
-    .form-content{
-      padding: 10px;
-    }
-
-    footer {
-      background: var(--main-btn);
-      color: white;
-      padding: 20px 20px;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .social-media-links{
-      color: var(--main-clr);
-    }
-
-    footer .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-      color: var(--main-clr);
-    }
-    footer a {
-      color: var(--text-clr);
-      font-size: var(--p-size);
-      transition: 0.3s;
-    }
-    footer a:hover {
-      color: var(--main-clr);
-    }
-    footer p {
-      font-size: var(--p-size);
-      margin-top: 10px;
-    }
-
-
-
-    
-
-
-    </style>
   </head>
   <body>
     <header>
       <a href="" class="logo"><span>FABRIO DINE</span></a>
       <ul class="nav-list">
+        <button id="nav-close-button"><i class="ri-close-line"></i></button>
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#shop">Shop</a></li>
@@ -621,7 +30,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-content">
-        <a href=""><i class="ri-login-circle-line"></i></a>
+        <a href="login.html"><i class="ri-login-circle-line"></i></a>
         <a href=""><i class="ri-shopping-cart-line"></i></a>
         <i class="ri-menu-line" id="navbtn"></i>
       </div>
@@ -716,7 +125,7 @@
             </div>
             <div class="card-text">
               <h3 >Chicken Grill Burger</h3>
-            <h5 >500 Rs.</h5>
+            <h5 >700 Rs.</h5>
             </div>
 
             <div class="card-button">
@@ -730,7 +139,7 @@
             </div>
             <div class="card-text">
               <h3 >Creamy Pasta</h3>
-            <h5 >500 Rs.</h5>
+            <h5 >600 Rs.</h5>
             </div>
 
             <div class="card-button">
@@ -744,7 +153,7 @@
             </div>
             <div class="card-text">
               <h3 >Seafood Pasta</h3>
-            <h5 >500 Rs.</h5>
+            <h5 >700 Rs.</h5>
             </div>
 
             <div class="card-button">
@@ -772,7 +181,7 @@
             </div>
             <div class="card-text">
               <h3 >Moist Cakes</h3>
-            <h5 >500 Rs.</h5>
+            <h5 >600 Rs.</h5>
             </div>
 
             <div class="card-button">
@@ -786,7 +195,7 @@
             </div>
             <div class="card-text">
               <h3 >Citrus Mocktail</h3>
-            <h5 >500 Rs.</h5>
+            <h5 >400 Rs.</h5>
             </div>
 
             <div class="card-button">
@@ -800,7 +209,7 @@
             </div>
             <div class="card-text">
               <h3 >Iced Coffee</h3>
-            <h5 >500 Rs.</h5>
+            <h5 >300 Rs.</h5>
             </div>
 
             <div class="card-button">
@@ -928,15 +337,15 @@ Our team believes in creating not just food, but an experience — one that’s 
 
           <div class="form-content">
             <h2>Your Details</h2>
-            <form action="">
+            <form action="forminsert.php" method="post" >
               <label for="name">Name: </label>
               <input type="text" placeholder="Name" name="name"><br>
 
               <label for="Email">Email: </label>
-              <input type="email" placeholder="Email"><br>
+              <input type="email" placeholder="Email" name="email"><br>
 
               <label for="Phone">Phone: </label>
-              <input type="text" placeholder="Phone" name="Phone"><br>
+              <input type="text" placeholder="Phone" name="phone"><br>
 
               <label for="Comments">Comments: </label>
               <textarea name="Comments" id="Comments"></textarea><br>
@@ -969,6 +378,9 @@ Our team believes in creating not just food, but an experience — one that’s 
       <p>© 2025 <span class="fabrio">FABRIO DINE.</span> All Rights Reserved.</p>
     </footer>
   
+
+
+  <script src="./script.js"></script>
 
    
   </body>
